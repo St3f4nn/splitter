@@ -33,6 +33,85 @@
     <title>Splitter | Tip Calculator App</title>
   </head>
   <body class="font-mono font-bold">
+    <main>
+      <div class="container">
+        <!-- Logo -->
+        <header>
+          <img src="./assets/images/header/logo.svg" alt="Splitter logo" />
+        </header>
+        <!-- Calculator container -->
+        <section>
+          <!-- Calculator container input -->
+          <div>
+            <!-- Calculator container input BILL field -->
+            <div>
+              <div>
+                <label for="bill">Bill</label>
+                <p>Can't be zero</p>
+              </div>
+              <div>
+                <img
+                  src="./assets/images/calculator_container/icon-dollar.svg"
+                  alt="Dollar sign icon"
+                />
+                <input type="number" id="bill" name="bill" placeholder="0" />
+              </div>
+            </div>
+            <!-- Calculator container input TIP buttons -->
+            <div>
+              <h4>Select Tip %</h4>
+              <div>
+                <button>5%</button>
+                <button>15%</button>
+                <button>25%</button>
+                <button>50%</button>
+                <input
+                  type="number"
+                  id="tip-input"
+                  name="tip-input"
+                  placeholder="Custom"
+                />
+              </div>
+            </div>
+            <!-- Calculator container input NUMBER OF PEOPLE field -->
+            <div>
+              <div>
+                <label for="people-number">Number of People</label>
+                <p>Can't be zero</p>
+              </div>
+              <div>
+                <img
+                  src="./assets/images/calculator_container/icon-person.svg"
+                  alt="User sign icon"
+                />
+                <input
+                  type="number"
+                  id="people-number"
+                  name="people-number"
+                  placeholder="0"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Calculator container output -->
+          <div>
+            <div>
+              <!-- Calculator container output TIP AMOUNT section -->
+              <div>
+                <h4>Tip Amount <span>/ person</span></h4>
+                <h2>$0.00</h2>
+              </div>
+              <!-- Calculator container output TOTAL section -->
+              <div>
+                <h4>Total <span>/ person</span></h4>
+                <h2>$0.00</h2>
+              </div>
+            </div>
+            <button>RESET</button>
+          </div>
+        </section>
+      </div>
+    </main>
     <script src="./js/script.js"></script>
   </body>
 </html>

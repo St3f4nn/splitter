@@ -562,9 +562,14 @@ video {
   max-width: 920px;
 }
 
-.bg-slate-400 {
+.bg-purple-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+  background-color: rgb(216 180 254 / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .font-mono {
@@ -573,14 +578,4 @@ video {
 
 .font-bold {
   font-weight: 700;
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-primary-strong-cyan {
-  --tw-text-opacity: 1;
-  color: hsl(172 67% 45% / var(--tw-text-opacity));
 }
