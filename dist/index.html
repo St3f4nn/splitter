@@ -32,69 +32,84 @@
     <link rel="stylesheet" href="./css/output.css" />
     <title>Splitter | Tip Calculator App</title>
   </head>
-  <body class="font-mono font-bold">
+  <body class="font-mono font-bold bg-secondary-light-grayish-cyan">
     <main>
-      <div class="container">
+      <div class="container flex flex-col">
         <!-- Logo -->
-        <header>
+        <header class="self-center w-21.75">
           <img src="./assets/images/header/logo.svg" alt="Splitter logo" />
         </header>
         <!-- Calculator container -->
-        <section>
+        <section class="bg-white mt-10 md:mt-21.75">
           <!-- Calculator container input -->
-          <div>
+          <div class="flex flex-col gap-8 md:gap-10">
             <!-- Calculator container input BILL field -->
             <div>
-              <div>
-                <label for="bill">Bill</label>
-                <p>Can't be zero</p>
+              <div class="grid grid-cols-2">
+                <label for="bill" class="text-secondary-grayish-cyan"
+                  >Bill</label
+                >
+                <p class="warning-message">Can't be zero</p>
               </div>
-              <div>
+              <div class="relative mt-1.5">
                 <img
                   src="./assets/images/calculator_container/icon-dollar.svg"
                   alt="Dollar sign icon"
+                  class="w-2.75 absolute top-1/2 -translate-y-1/2 left-4.75"
                 />
-                <input type="number" id="bill" name="bill" placeholder="0" />
+                <input
+                  type="number"
+                  id="bill"
+                  name="bill"
+                  class="pr-4 pl-11"
+                  placeholder="0"
+                />
               </div>
             </div>
             <!-- Calculator container input TIP buttons -->
             <div>
-              <h4>Select Tip %</h4>
-              <div>
-                <button>5%</button>
-                <button>15%</button>
-                <button>25%</button>
-                <button>50%</button>
+              <h4 class="text-secondary-grayish-cyan">Select Tip %</h4>
+              <div class="mt-4 grid grid-cols-3 gap-4 md:gap-y-4 md:gap-x-3.5">
+                <button class="tip-btn">5%</button>
+                <button class="tip-btn">10%</button>
+                <button class="tip-btn">15%</button>
+                <button class="tip-btn">25%</button>
+                <button class="tip-btn">50%</button>
                 <input
                   type="number"
                   id="tip-input"
                   name="tip-input"
+                  class="tip-input"
                   placeholder="Custom"
                 />
               </div>
             </div>
             <!-- Calculator container input NUMBER OF PEOPLE field -->
             <div>
-              <div>
-                <label for="people-number">Number of People</label>
-                <p>Can't be zero</p>
+              <div class="grid grid-cols-2">
+                <label for="people-number" class="text-secondary-grayish-cyan"
+                  >Number of People</label
+                >
+                <p class="warning-message">Can't be zero</p>
               </div>
-              <div>
+              <div class="relative mt-1.5">
                 <img
                   src="./assets/images/calculator_container/icon-person.svg"
                   alt="User sign icon"
+                  class="w-3.25 absolute top-1/2 -translate-y-1/2 left-4.25"
                 />
                 <input
                   type="number"
                   id="people-number"
                   name="people-number"
+                  class="pr-4 pl-11"
                   placeholder="0"
                 />
               </div>
             </div>
           </div>
           <!-- Calculator container output -->
-          <div>
+          <div class="bg-secondary-very-dark-cyan">
             <div>
               <!-- Calculator container output TIP AMOUNT section -->
               <div>
