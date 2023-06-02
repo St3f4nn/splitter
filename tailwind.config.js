@@ -19,7 +19,6 @@ module.exports = {
 
           "grayish-cyan": "hsl(184, 14%, 56%)",
           "light-grayish-cyan": "hsl(185, 41%, 84%)",
-
           "very-light-grayish-cyan": "hsl(189, 41%, 97%)",
 
           "shade-of-red": "hsl(12, 33%, 57%)",
@@ -29,10 +28,20 @@ module.exports = {
       fontFamily: {
         mono: "'Space Mono', monospace",
       },
+      gridTemplateColumns: {
+        "calculator-container": "48.01fr 48.25fr",
+        "output-cols": "1fr 2fr",
+      },
       spacing: {
+        3.75: "0.9375rem",
         4.25: "1.0625rem",
         4.75: "1.1875rem",
+        5.75: "1.4375rem",
+        8.25: "2.0625rem",
+        12.5: "3.125rem",
+        12.75: "3.1875rem",
         21.75: "5.4375rem",
+        40.75: "10.1875rem",
       },
       width: {
         2.75: "0.6875rem",

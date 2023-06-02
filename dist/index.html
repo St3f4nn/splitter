@@ -30,26 +30,28 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/output.css" />
-    <title>Splitter | Tip Calculator App</title>
+    <title>Tip Calculator | SPLITTER</title>
   </head>
   <body class="font-mono font-bold bg-secondary-light-grayish-cyan">
-    <main>
+    <main class="pt-12.5 md:py-40.75">
       <div class="container flex flex-col">
         <!-- Logo -->
         <header class="self-center w-21.75">
           <img src="./assets/images/header/logo.svg" alt="Splitter logo" />
         </header>
         <!-- Calculator container -->
-        <section class="bg-white mt-10 md:mt-21.75">
+        <section
+          class="bg-white mt-10 md:mt-21.75 grid grid-cols-1 md:grid-cols-calculator-container py-8 px-6 lg:p-8 items-center gap-8"
+        >
           <!-- Calculator container input -->
-          <div class="flex flex-col gap-8 md:gap-10">
+          <div class="flex flex-col gap-8 px-2 md:px-0 md:gap-10 xl:px-4">
             <!-- Calculator container input BILL field -->
             <div>
               <div class="grid grid-cols-2">
                 <label for="bill" class="text-secondary-grayish-cyan"
                   >Bill</label
                 >
-                <p class="warning-message">Can't be zero</p>
+                <p class="bg-green-700 warning-message">Can't be zero</p>
               </div>
               <div class="relative mt-1.5">
                 <img
@@ -90,7 +92,7 @@
                 <label for="people-number" class="text-secondary-grayish-cyan"
                   >Number of People</label
                 >
-                <p class="warning-message">Can't be zero</p>
+                <p class="bg-orange-800 warning-message">Can't be zero</p>
               </div>
               <div class="relative mt-1.5">
                 <img
@@ -109,20 +111,48 @@
             </div>
           </div>
           <!-- Calculator container output -->
-          <div class="bg-secondary-very-dark-cyan">
-            <div>
+          <div
+            class="relative self-stretch px-10 pb-10 bg-secondary-very-dark-cyan pt-14"
+          >
+            <div class="flex flex-col gap-5.75 md:gap-12.75">
               <!-- Calculator container output TIP AMOUNT section -->
-              <div>
-                <h4>Tip Amount <span>/ person</span></h4>
-                <h2>$0.00</h2>
+              <div
+                class="grid items-center grid-cols-2 md:grid-cols-output-cols"
+              >
+                <h4 class="text-secondary-very-light-grayish-cyan">
+                  Tip Amount
+                  <span class="block text-secondary-grayish-cyan"
+                    >/ person</span
+                  >
+                </h4>
+                <h2
+                  class="text-4xl text-right md:text-5xl text-primary-strong-cyan"
+                >
+                  $0.00
+                </h2>
               </div>
               <!-- Calculator container output TOTAL section -->
-              <div>
-                <h4>Total <span>/ person</span></h4>
-                <h2>$0.00</h2>
+              <div
+                class="grid items-center grid-cols-2 md:grid-cols-output-cols"
+              >
+                <h4 class="text-secondary-very-light-grayish-cyan">
+                  Total
+                  <span class="block text-secondary-grayish-cyan"
+                    >/ person</span
+                  >
+                </h4>
+                <h2
+                  class="text-4xl text-right md:text-5xl text-primary-strong-cyan"
+                >
+                  $0.00
+                </h2>
               </div>
             </div>
-            <button>RESET</button>
+            <button
+              class="px-5 py-3 text-xl leading-6 text-center text-secondary-very-dark-cyan bg-primary-strong-cyan mt-8.25 md:mt-0 hover:bg-secondary-cyan-hover unclickable md:absolute md:bottom-10 md:left-10 md:right-10 w-full md:w-auto"
+            >
+              RESET
+            </button>
           </div>
         </section>
       </div>

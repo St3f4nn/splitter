@@ -13,6 +13,10 @@
     @apply py-1.5 text-2xl text-right border-2 border-transparent border-solid cursor-pointer bg-secondary-shade-of-gray text-secondary-very-dark-cyan w-full;
   }
 
+  input:hover {
+    @apply border-secondary-cyan;
+  }
+
   input:focus {
     @apply outline-none border-secondary-cyan;
   }
@@ -23,6 +27,10 @@
     @apply text-secondary-very-dark-cyan bg-primary-strong-cyan !important;
   }
 
+  .unclickable {
+    @apply pointer-events-none opacity-30;
+  }
+
   .warning-message {
     @apply hidden text-right text-secondary-shade-of-red;
   }
@@ -30,7 +38,7 @@
   /* Calculator container */
 
   .tip-btn {
-    @apply px-4 py-2 text-2xl text-center text-white bg-secondary-very-dark-cyan hover:bg-secondary-cyan-hover hover:text-secondary-very-dark-cyan;
+    @apply px-4 py-2 text-2xl text-center text-secondary-very-light-grayish-cyan bg-secondary-very-dark-cyan hover:bg-secondary-cyan-hover hover:text-secondary-very-dark-cyan;
   }
 
   .tip-input {
@@ -76,4 +84,30 @@ input[type="number"] {
 
 .tip-input::placeholder {
   color: hsl(186, 14%, 43%);
+}
+
+@media (min-width: 768px) {
+  .tip-input::-webkit-input-placeholder {
+    text-align: center;
+  }
+
+  .tip-input:-moz-placeholder {
+    text-align: center;
+  }
+
+  .tip-input::-moz-placeholder {
+    text-align: center;
+  }
+
+  .tip-input:-ms-input-placeholder {
+    text-align: center;
+  }
+
+  .tip-input::-ms-input-placeholder {
+    text-align: center;
+  }
+
+  .tip-input::placeholder {
+    text-align: center;
+  }
 }
