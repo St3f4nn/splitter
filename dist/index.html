@@ -41,17 +41,17 @@
         </header>
         <!-- Calculator container -->
         <section
-          class="bg-white mt-10 md:mt-21.75 grid grid-cols-1 md:grid-cols-calculator-container py-8 px-6 lg:p-8 items-center gap-8"
+          class="bg-white mt-10 md:mt-21.75 grid grid-cols-1 md:grid-cols-calculator-container py-8 px-6 lg:p-8 items-center gap-8 rounded-3xl"
         >
           <!-- Calculator container input -->
           <div class="flex flex-col gap-8 px-2 md:px-0 md:gap-10 xl:px-4">
             <!-- Calculator container input BILL field -->
             <div>
-              <div class="grid grid-cols-2">
+              <div class="grid grid-cols-label-cols md:grid-cols-2">
                 <label for="bill" class="text-secondary-grayish-cyan"
                   >Bill</label
                 >
-                <p class="bg-green-700 warning-message">Can't be zero</p>
+                <p class="warning-message">Can't be zero</p>
               </div>
               <div class="relative mt-1.5">
                 <img
@@ -88,11 +88,11 @@
             </div>
             <!-- Calculator container input NUMBER OF PEOPLE field -->
             <div>
-              <div class="grid grid-cols-2">
+              <div class="grid grid-cols-label-cols md:grid-cols-2">
                 <label for="people-number" class="text-secondary-grayish-cyan"
                   >Number of People</label
                 >
-                <p class="bg-orange-800 warning-message">Can't be zero</p>
+                <p class="warning-message">Can't be zero</p>
               </div>
               <div class="relative mt-1.5">
                 <img
@@ -112,7 +112,7 @@
           </div>
           <!-- Calculator container output -->
           <div
-            class="relative self-stretch px-10 pb-10 bg-secondary-very-dark-cyan pt-14"
+            class="relative self-stretch px-10 pb-10 bg-secondary-very-dark-cyan pt-14 rounded-2xl"
           >
             <div class="flex flex-col gap-5.75 md:gap-12.75">
               <!-- Calculator container output TIP AMOUNT section -->

@@ -10,7 +10,7 @@
   }
 
   input {
-    @apply py-1.5 text-2xl text-right border-2 border-transparent border-solid cursor-pointer bg-secondary-shade-of-gray text-secondary-very-dark-cyan w-full;
+    @apply py-1.5 text-lg sm:text-2xl text-right border-2 border-transparent border-solid cursor-pointer bg-secondary-shade-of-gray text-secondary-very-dark-cyan w-full rounded-md;
   }
 
   input:hover {
@@ -38,7 +38,7 @@
   /* Calculator container */
 
   .tip-btn {
-    @apply px-4 py-2 text-2xl text-center text-secondary-very-light-grayish-cyan bg-secondary-very-dark-cyan hover:bg-secondary-cyan-hover hover:text-secondary-very-dark-cyan;
+    @apply px-4 py-2 text-lg text-center rounded-md sm:text-2xl text-secondary-very-light-grayish-cyan bg-secondary-very-dark-cyan hover:bg-secondary-cyan-hover hover:text-secondary-very-dark-cyan;
   }
 
   .tip-input {

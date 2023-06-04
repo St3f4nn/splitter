@@ -31,6 +31,7 @@ module.exports = {
       gridTemplateColumns: {
         "calculator-container": "48.01fr 48.25fr",
         "output-cols": "1fr 2fr",
+        "label-cols": "55fr 45fr",
       },
       spacing: {
         3.75: "0.9375rem",
