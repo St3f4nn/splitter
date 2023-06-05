@@ -467,6 +467,13 @@ input:focus {
 
 /* Utilities */
 
+.selected {
+  --tw-bg-opacity: 1 !important;
+  background-color: hsl(172 67% 45% / var(--tw-bg-opacity)) !important;
+  --tw-text-opacity: 1 !important;
+  color: hsl(183 100% 15% / var(--tw-text-opacity)) !important;
+}
+
 .unclickable {
   pointer-events: none;
   opacity: 0.3;
