@@ -23,6 +23,10 @@
 
   /* Utilities */
 
+  .empty-field {
+    @apply border-secondary-shade-of-red;
+  }
+
   .selected {
     @apply text-secondary-very-dark-cyan bg-primary-strong-cyan !important;
   }
@@ -32,7 +36,7 @@
   }
 
   .warning-message {
-    @apply hidden text-right text-secondary-shade-of-red;
+    @apply text-right text-secondary-shade-of-red;
   }
 
   /* Calculator container */

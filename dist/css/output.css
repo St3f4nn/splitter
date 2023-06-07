@@ -467,6 +467,11 @@ input:focus {
 
 /* Utilities */
 
+.empty-field {
+  --tw-border-opacity: 1;
+  border-color: hsl(12 33% 57% / var(--tw-border-opacity));
+}
+
 .selected {
   --tw-bg-opacity: 1 !important;
   background-color: hsl(172 67% 45% / var(--tw-bg-opacity)) !important;
@@ -480,7 +485,6 @@ input:focus {
 }
 
 .warning-message {
-  display: none;
   text-align: right;
   --tw-text-opacity: 1;
   color: hsl(12 33% 57% / var(--tw-text-opacity));
@@ -720,6 +724,10 @@ input:focus {
 
 .grid {
   display: grid;
+}
+
+.hidden {
+  display: none;
 }
 
 .w-2 {
