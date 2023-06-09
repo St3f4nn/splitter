@@ -36,6 +36,72 @@ function calculateTip(tip) {
   resetBtn.classList.remove("unclickable");
 }
 
+function addAllWarnings() {
+  billInputField.classList.add("empty-field");
+  numberOfPeopleField.classList.add("empty-field");
+
+  for (let i = 0; i < warningMessages.length; i++) {
+    warningMessages[i].classList.remove("hidden");
+  }
+}
+
+function removeAllWarnings() {
+  billInputField.classList.remove("empty-field");
+  numberOfPeopleField.classList.remove("empty-field");
+
+  for (let i = 0; i < warningMessages.length; i++) {
+    warningMessages[i].classList.add("hidden");
+  }
+}
+
+function emptyBillInputField() {
+  billInputField.classList.add("empty-field");
+  numberOfPeopleField.classList.remove("empty-field");
+
+  warningMessages[0].classList.remove("hidden");
+  warningMessages[1].classList.add("hidden");
+}
+
+function emptyNumberOfPeopleInputField() {
+  billInputField.classList.remove("empty-field");
+  numberOfPeopleField.classList.add("empty-field");
+
+  warningMessages[0].classList.add("hidden");
+  warningMessages[1].classList.remove("hidden");
+}
+
+function addInputEventHandler(inputField, message, tipPercentage) {
+  let events = ["keyup", "touchend"];
+
+  for (let i = 0; i < events.length; i++) {
+    inputField.addEventListener(events[i], function (e) {
+      let eventCode = e.key;
+
+      switch (eventCode) {
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+        case "9":
+        case "0":
+        case "Backspace":
+          inputField.classList.remove("empty-field");
+
+          message.classList.add("hidden");
+
+          calculateTip(tipPercentage);
+          break;
+        default:
+          return;
+      }
+    });
+  }
+}
+
 // Main functionality
 
 for (let i = 0; i < tipBtns.length; i++) {
@@ -44,37 +110,44 @@ for (let i = 0; i < tipBtns.length; i++) {
 
     tipBtns[i].classList.add("selected");
 
+    tipInputField.value = "";
+
+    const tipPercentage = tipBtns[i].textContent;
+    const tipPercentageNumber = Number(
+      tipPercentage.substring(0, tipPercentage.length - 1)
+    );
+
     if (!billInputField.value && !numberOfPeopleField.value) {
-      billInputField.classList.add("empty-field");
-      numberOfPeopleField.classList.add("empty-field");
+      addAllWarnings();
 
-      for (let i = 0; i < warningMessages.length; i++) {
-        warningMessages[i].classList.remove("hidden");
-      }
-    } else if (!billInputField.value) {
-      billInputField.classList.add("empty-field");
-      numberOfPeopleField.classList.remove("empty-field");
-
-      warningMessages[0].classList.remove("hidden");
-      warningMessages[1].classList.add("hidden");
-    } else if (!numberOfPeopleField.value) {
-      billInputField.classList.remove("empty-field");
-      numberOfPeopleField.classList.add("empty-field");
-
-      warningMessages[0].classList.add("hidden");
-      warningMessages[1].classList.remove("hidden");
-    } else {
-      billInputField.classList.remove("empty-field");
-      numberOfPeopleField.classList.remove("empty-field");
-
-      for (let i = 0; i < warningMessages.length; i++) {
-        warningMessages[i].classList.add("hidden");
-      }
-
-      const tipPercentage = tipBtns[i].textContent;
-      const tipPercentageNumber = Number(
-        tipPercentage.substring(0, tipPercentage.length - 1)
+      addInputEventHandler(
+        billInputField,
+        warningMessages[0],
+        tipPercentageNumber
       );
+      addInputEventHandler(
+        numberOfPeopleField,
+        warningMessages[1],
+        tipPercentageNumber
+      );
+    } else if (!billInputField.value) {
+      emptyBillInputField();
+
+      addInputEventHandler(
+        billInputField,
+        warningMessages[0],
+        tipPercentageNumber
+      );
+    } else if (!numberOfPeopleField.value) {
+      emptyNumberOfPeopleInputField();
+
+      addInputEventHandler(
+        numberOfPeopleField,
+        warningMessages[1],
+        tipPercentageNumber
+      );
+    } else {
+      removeAllWarnings();
 
       calculateTip(tipPercentageNumber);
     }
@@ -84,6 +157,8 @@ for (let i = 0; i < tipBtns.length; i++) {
 tipInputField.addEventListener("click", removeSelectedClass);
 tipInputField.addEventListener("keyup", function (e) {
   let eventCode = e.key;
+
+  const tipPercentage = tipInputField.value;
 
   switch (eventCode) {
     case "1":
@@ -98,33 +173,28 @@ tipInputField.addEventListener("keyup", function (e) {
     case "0":
     case "Backspace":
       if (!billInputField.value && !numberOfPeopleField.value) {
-        billInputField.classList.add("empty-field");
-        numberOfPeopleField.classList.add("empty-field");
+        addAllWarnings();
 
-        for (let i = 0; i < warningMessages.length; i++) {
-          warningMessages[i].classList.remove("hidden");
-        }
+        addInputEventHandler(billInputField, warningMessages[0], tipPercentage);
+        addInputEventHandler(
+          numberOfPeopleField,
+          warningMessages[1],
+          tipPercentage
+        );
       } else if (!billInputField.value) {
-        billInputField.classList.add("empty-field");
-        numberOfPeopleField.classList.remove("empty-field");
+        emptyBillInputField();
 
-        warningMessages[0].classList.remove("hidden");
-        warningMessages[1].classList.add("hidden");
+        addInputEventHandler(billInputField, warningMessages[0], tipPercentage);
       } else if (!numberOfPeopleField.value) {
-        billInputField.classList.remove("empty-field");
-        numberOfPeopleField.classList.add("empty-field");
+        emptyNumberOfPeopleInputField();
 
-        warningMessages[0].classList.add("hidden");
-        warningMessages[1].classList.remove("hidden");
+        addInputEventHandler(
+          numberOfPeopleField,
+          warningMessages[1],
+          tipPercentage
+        );
       } else {
-        billInputField.classList.remove("empty-field");
-        numberOfPeopleField.classList.remove("empty-field");
-
-        for (let i = 0; i < warningMessages.length; i++) {
-          warningMessages[i].classList.add("hidden");
-        }
-
-        const tipPercentage = tipInputField.value;
+        removeAllWarnings();
 
         calculateTip(tipPercentage);
       }
