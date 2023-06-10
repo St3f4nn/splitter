@@ -25,13 +25,14 @@ function removeSelectedClass() {
 
 function calculateTip(tip) {
   const billValue = Number(billInputField.value);
+  const numberOfPeopleValue = Number(numberOfPeopleField.value);
 
   const tipAmountPerPerson = Number((billValue * (tip / 100)).toFixed(2));
 
-  const totalPerPerson = (billValue + tipAmountPerPerson).toFixed(2);
+  const totalPerPerson = (numberOfPeopleValue * tipAmountPerPerson).toFixed(2);
 
-  tipAmountDisplay.textContent = tipAmountPerPerson;
-  totalAmountDisplay.textContent = totalPerPerson;
+  tipAmountDisplay.textContent = `$${tipAmountPerPerson}`;
+  totalAmountDisplay.textContent = `$${totalPerPerson}`;
 
   resetBtn.classList.remove("unclickable");
 }
@@ -202,4 +203,20 @@ tipInputField.addEventListener("keyup", function (e) {
     default:
       return;
   }
+});
+
+resetBtn.addEventListener("click", function () {
+  removeAllWarnings();
+  removeSelectedClass();
+
+  billInputField.value = "";
+  tipInputField.value = "";
+  numberOfPeopleField.value = "";
+
+  tipAmountDisplay.textContent = "$0.00";
+  totalAmountDisplay.textContent = "$0.00";
+
+  resetBtn.classList.add("unclickable");
+
+  billInputField.removeEventListener();
 });
