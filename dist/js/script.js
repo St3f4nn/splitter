@@ -15,6 +15,10 @@ const resetBtn = document.querySelector("#reset-btn");
 
 const warningMessages = document.querySelectorAll(".warning-message");
 
+// Accessory
+
+let events = ["keyup", "touchend"];
+
 // Functions
 
 function removeSelectedClass() {
@@ -72,8 +76,6 @@ function emptyNumberOfPeopleInputField() {
 }
 
 function addInputEventHandler(inputField, message, tipPercentage) {
-  let events = ["keyup", "touchend"];
-
   for (let i = 0; i < events.length; i++) {
     inputField.addEventListener(events[i], function (e) {
       let eventCode = e.key;
@@ -126,6 +128,7 @@ for (let i = 0; i < tipBtns.length; i++) {
         warningMessages[0],
         tipPercentageNumber
       );
+
       addInputEventHandler(
         numberOfPeopleField,
         warningMessages[1],
@@ -218,5 +221,11 @@ resetBtn.addEventListener("click", function () {
 
   resetBtn.classList.add("unclickable");
 
-  billInputField.removeEventListener();
+  const allInputFields = document.querySelectorAll(".input");
+
+  for (let i = 0; i < allInputFields.length; i++) {
+    allInputFields[i].addEventListener(events[i], function () {
+      return;
+    });
+  }
 });

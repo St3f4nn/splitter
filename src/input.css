@@ -27,6 +27,10 @@
     @apply border-secondary-shade-of-red;
   }
 
+  .input {
+    @apply pr-4 pl-11;
+  }
+
   .selected {
     @apply text-secondary-very-dark-cyan bg-primary-strong-cyan !important;
   }

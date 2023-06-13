@@ -472,6 +472,11 @@ input:focus {
   border-color: hsl(12 33% 57% / var(--tw-border-opacity));
 }
 
+.input {
+  padding-right: 1rem;
+  padding-left: 2.75rem;
+}
+
 .selected {
   --tw-bg-opacity: 1 !important;
   background-color: hsl(172 67% 45% / var(--tw-bg-opacity)) !important;
